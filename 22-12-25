@@ -64,3 +64,199 @@ Read.me is a good place to throw known bugs/problems for your own reference whil
 	# Explain the problem and what steps are needed to reproduce it
 	# Describe what you're expecting to happen and why you're expecting this to happen from what you've coded
 	# Summarize what's already been tried. This cuts out duplicate solutions and can also let people say "when you tried this did you do..." 
+
+
+
+
+
+
+### Odin Project Homework - Lesson "Computer Basics"
+
+# Networks:
+
+# Any form of linked computer
+
+# As physically linking more than two can be very impractical, this is when you introduce a network switch ("switch") which solely takes messages from computers and sends them to their correct target destination
+# e.g A -> Switch -> B, never reaches C
+
+# Switches can be connected to other switches 
+# e.g A -> Switch -> Switch -> F, never reaches anything else from A - J only F
+
+# These can be infinitely chained together to make larger networks but this introduces more problems (e.g if a switch dies, then everything connected to it is cut off)
+
+# This si why we use routers: they forward messages between local and wide area networks
+
+# Modems are the physical object that connects routers to local networks and generally use the existing infrastructure from phone lines
+# Note that some "modern" connections need upgrading/infrastructure replacement e.g conversion to fiber but the basic infrastructure for all internet network is phone lines
+
+# Commercially avaialable routers are generally a switch/router/modem combination 
+
+# Local network is then connected to another network (ISP) which is carried through to its destination 
+
+
+
+
+##    What is a web server?
+	
+#	The computer that hosts a website 
+	
+#	So if the web server dies (or the computer hosting it), the site does as well unless it has an alternative host
+	
+#	Comparable to a library (holds books, which are different websites)
+	
+#	Not to be confused with "website is not responding" (is often the web server). "Web server is not responding" may be part of the host or all of it
+	
+##    What is a network?
+	
+#	Any form of linked computer (see above)
+	
+	
+##    What is the internet?
+
+#	A big ol wire. Sometimes satelitte (rural, plane)
+	
+##	Infrastructure that enables connection between networks that services such as web access and IRC use to connect
+   
+#	Clients: anything connected an ISP 
+	
+   
+ ##  Within this these are different types of network - 
+   
+   # Extranet: has part or all of private network accessible, usually for business purposes or sharing information between collaborators
+   # Intranet: fully private network, usually has some form of log in portal. Example are work related training sites, schedule management etc
+   
+   # These can be accessed from anywhere as long as the credentials are valid (some may have IP white/blacklisting)
+ 
+	# Despite cloud servers, it still isn't cloud based 
+   
+  ##  What is an IP address?
+	
+	# Identifiers for a unique computer on a network represented as a series of numbers. "Postal address". EVERYTHING has one.
+	
+	# There's IP4 (the short 4 dot form) or IPv6 (the long ass one)
+	
+	# We use domain names for readability for websites (remember these are also computers - they're hosted on a server) 
+	# These of course can be alphanumerical (www.mysite.com vs 192.0.2.188)
+	
+	
+	
+    ## What is a router?
+	
+	# Device that forwards messages between networks. Each time data passes throguh a router it adds "layers" (adds IP address) to the packet. This ensures that data goes where it needs to go 
+	
+	# Commercially available routers are a combination of modem/switch/router 
+  
+
+   ## What is an ISP?
+   
+   # Internet service provider
+	# Will be the ones making the bulk of decision making about pathing for example
+   
+   ## What are packets and how are they used to transfer data?
+	
+	# Data broken down into smaller chunks when being moved between networks, which are then reassembled at their destination
+	
+	# Breaking down into small chunks helps avoid issues with dropped packets or corruption - it's easier to request missing packets than have to request the full data
+	
+	# Packets also can use network routing more efficient (e.g "send this down a less busy connection to the same destination")
+
+	# If they arrive out of order it doesn't matter, as long as they can be reassembled 
+	
+	# Each packet involves:
+	# - Header: has all the identifying details (server + client IP, packet number, total number of packets, details of protocols used in tranmission)
+	# - Payload: the actual data
+	
+	# Packet loss is when this doesn't work as efficiently as it should - packets get dropped somewhere on their way across various routers 
+	# Tends to happen with too much data being sent through a specific router, so the router loses data being sent to it
+	# Too much of this in a network is frustrating to an end user and it becomes more obvious in things like voice calls, streaming, gaming because it results in latency 
+	# Mitigated by sending packets through a different router if it's being blasted/is otherwise having technical issues 
+	
+    ## What is a client?
+	
+	# Client: typical end user (computer connected to wifi, web browser accessing a website). Literally any device that makes/sends requests and receives them from some form of server
+	
+	# Servers can sometimes be a client (revisit later)
+
+	# Clients make a copy of whatever is available on a server on their own machine
+	
+    ## What is a server?
+	
+	# Server: computers that store webpages 
+	
+	## A really simple definition is just "it's a computer" and is primary job is listening to client requests 
+	## e.g when you go to a website, the server sends you the information requested 
+	
+    ## What is a web page?
+	
+	# A document that can be displayed within a web browser 
+	
+	
+    ## What is a web browser?
+	
+	
+    ## What is a search engine?
+	# Service that helps you find other webpages
+	# Google, Duckduckgo, Bing etc
+	
+	# Some web browsers have imbedded search in the address bar
+	
+	# Helps find a specific website's unique location
+	
+	## What is a DNS request?
+	
+	# Domain name system (remember that domain names are just readable versions of IP addresses)
+	
+	# Every domain has an end dot (www.hithere.com.)
+	
+	# DNS requests:
+	 # -> do I already know what the IP address of this domain name is (configured on computer, cached)
+	 # -> OS queries DNS if it does not know
+	 # -> COM: Is only really concerned with the root name server ("you want to go to the TLD")
+	 # -> Then top level domain/TLD ("this is where www.hithere.com lives")
+	 # -> Authorative name server ("www.hithere.com is at this IP address")
+	 # -> This is all sent (and cached) to the client browser
+	 
+	 # If any of these vanish, the process breaks entirely
+	
+	
+    ## Which browser are you currently using?
+	
+	Firefox 146.01
+
+
+	
+    ## In your own words, describe the process that takes place when you initiate a search on google.com in terms of what we discussed.
+
+# Client requests all the DNS info for Google 
+
+# Data sent and received rom appropriate server to display the HTML for Google
+
+# User then can input whatever they're looking for, this data is also sent + received and displays appropriate result and 309857u42387 ads 
+
+## Request - Response: 
+
+# Request:
+# Device -> asks for resoruce (HTML, token, image, whatever) - if not on the same client, will then need to connect to the internet
+
+##Response: 
+#Reply to request
+#Server does as it's asked (in theory) and should just contain what was requested from the client
+#May send "no auth" for example without login details and go "no >:("
+
+#(200 = status OK)
+
+##Request:
+#"Can I also have this google hosted font"
+
+##Response: 
+#200 
+
+##Request:
+#"Can I have the CEO access"
+
+##Response:
+#"No" (403, "Forbidden")
+
+
+~ Note that 500 codes are server related errors 
+
